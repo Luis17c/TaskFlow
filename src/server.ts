@@ -1,5 +1,10 @@
+import 'reflect-metadata'
+import './infra/containers'
+
 import { ApolloServer } from "@apollo/server";
 import { startStandaloneServer } from "@apollo/server/standalone"
+
+import { Mongoose } from 'mongoose';
 
 import { typeDefs, resolvers } from "./infra/gql";
 
@@ -17,3 +22,6 @@ const start = async () => {
 }
 
 start()
+
+const mongo = new Mongoose
+mongo.connect('mongodb://localhost:27017/')

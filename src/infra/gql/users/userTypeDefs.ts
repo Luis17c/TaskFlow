@@ -11,9 +11,16 @@ export const userTypeDefs = gql`
 
     type Query {
         getUsers: [User]
+        getUser(id: ID!): User!
     }
     
+    input UserData {
+        email: String
+        password: String
+        name: String
+    }
+
     type Mutation {
-        createUser: User!
+        createUser(userData: UserData): User!
     }
 `
