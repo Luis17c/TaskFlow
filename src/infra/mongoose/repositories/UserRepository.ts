@@ -15,11 +15,12 @@ export class UserRepository implements IUserRepository {
         return await this.mongoRepository.findById(id)
     }
 
-    async createUser({ name, email, password }: CreateUserDTO): Promise<IUser> {
+    async createUser({ name, email, password, avatar }: CreateUserDTO): Promise<IUser> {
         const user = new User({
             name,
             email,
             password,
+            avatar,
             createdAt: new Date().toISOString,
             updatedAt: new Date().toISOString
         })

@@ -5,6 +5,7 @@ export const userTypeDefs = gql`
         email: String
         password: String
         name: String
+        avatar: String
         createdAt: String
         updatedAt: String
     }
@@ -18,6 +19,7 @@ export const userTypeDefs = gql`
         email: String
         password: String
         name: String
+        avatar: String
     }
 
     type Mutation {
