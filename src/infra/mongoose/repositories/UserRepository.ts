@@ -37,7 +37,7 @@ export class UserRepository implements IUserRepository {
     }
 
     async delUser(id: String): Promise<Boolean> {
-        const deleteResult = await User.deleteOne({ _id: id})
+        const deleteResult = await User.deleteOne({id})
         return Boolean(deleteResult.deletedCount) 
     }
 }
