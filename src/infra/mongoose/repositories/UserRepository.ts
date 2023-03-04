@@ -1,28 +1,27 @@
-import { CreateUserDTO } from "@/domain/dtos/CreateUserDTO";
+import { IReceiveData } from "@/domain/dtos/IReceiveData";
 import { IUser } from "@/domain/interfaces/IUser";
 import { IUserRepository } from "@/domain/repositories/IUserRepository";
 import { User } from "../schemas/User";
 
 export class UserRepository implements IUserRepository {
-    
-    private mongoRepository = User
 
     async getUsers(): Promise<IUser[]> {
-        return await this.mongoRepository.find()
+        const users = await User.find()
+        return users
     }
 
     async getUser(id: any): Promise<IUser> {
-        return await this.mongoRepository.findById(id)
+        return await User.findById(id)
     }
 
-    async createUser({ name, email, password, avatar }: CreateUserDTO): Promise<IUser> {
+    async createUser({ userData }: IReceiveData): Promise<IUser> {
         const user = new User({
-            name,
-            email,
-            password,
-            avatar,
-            createdAt: new Date().toISOString,
-            updatedAt: new Date().toISOString
+            name: userData.name,
+            email: userData.email,
+            password: userData.password,
+            avatar: userData.avatar,
+            createdAt: new Date().toISOString(),
+            updatedAt: new Date().toISOString()
         })
 
         await user.save()

@@ -7,8 +7,8 @@ const userSchema = new Schema<IUser>({
     email: {type: String, required: true},
     password: {type: String, required: true},
     avatar: String,
-    createdAt: {type: String, required: true},
-    updatedAt: {type: String, required: true}
+    createdAt: String,
+    updatedAt: String
 })
 
 export const User = model<IUser>('User', userSchema)
