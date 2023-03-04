@@ -26,6 +26,14 @@ export const userResolvers = {
     Mutation: {
         async createUser (userData: CreateUserDTO) {
             return await repositories.usersRepository.createUser(userData)
+        },
+        
+        async editUserAvatar (id: String, avatar: String) {
+            return await repositories.usersRepository.editUserAvatar(id, avatar)
+        },
+
+        async delUser (id: String) {
+            return await repositories.usersRepository.delUser(id)
         }
     }
 }

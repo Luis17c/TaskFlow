@@ -24,5 +24,7 @@ export const userTypeDefs = gql`
 
     type Mutation {
         createUser(userData: UserData): User!
+        editUserAvatar(id: ID!, avatar: String): User!
+        delUser(id: ID!): Boolean
     }
 `

@@ -29,4 +29,16 @@ export class UserRepository implements IUserRepository {
 
         return user
     }
+
+    async editUserAvatar(id: string, newAvatar: string): Promise<IUser> {
+        const user = await User.findById(id)
+        user.avatar = newAvatar
+        await user.save()
+        return user
+    }
+
+    async delUser(id: String): Promise<Boolean> {
+        const deleteResult = await User.deleteOne({ _id: id})
+        return Boolean(deleteResult.deletedCount) 
+    }
 }
