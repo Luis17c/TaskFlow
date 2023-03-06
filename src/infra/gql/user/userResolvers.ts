@@ -1,4 +1,3 @@
-import { CreateUserDTO } from "@/domain/dtos/CreateUserDTO"
 import { IReceiveData } from "@/domain/dtos/IReceiveData"
 import { IUserRepository } from "@/domain/repositories/IUserRepository"
 import { container, inject, injectable } from "tsyringe"
