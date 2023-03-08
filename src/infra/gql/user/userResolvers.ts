@@ -1,4 +1,4 @@
-import { IReceiveData } from "@/domain/dtos/IReceiveData"
+import { ICreateUserDTO } from "@/domain/dtos/ICreateUserDTO"
 import { IUserRepository } from "@/domain/repositories/IUserRepository"
 import { container, inject, injectable } from "tsyringe"
 
@@ -24,7 +24,7 @@ export const userResolvers = {
     },
 
     Mutation: {
-        async createUser (_, userData: IReceiveData) {
+        async createUser (_, userData: ICreateUserDTO) {
             return await repositories.userRepository.createUser(userData)
         },
         

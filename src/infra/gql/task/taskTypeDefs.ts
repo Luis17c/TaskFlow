@@ -51,7 +51,7 @@ export const taskTypeDefs = gql`
         delUser(taskId: ID!, userId: ID!): Task
         delTask(taskId: ID!): Boolean
 
-        addStep(taskId: ID!, stepData: StepData): task
+        addStep(taskId: ID!, stepData: StepData): Task
         delStep(taskId: ID!, stepId: ID!): Boolean       
     }
 `
