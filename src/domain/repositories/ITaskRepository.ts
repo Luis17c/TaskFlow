@@ -3,10 +3,10 @@ import { ICreateTaskDTO } from "../dtos/ICreateTaskDTO"
 import { IStep, ITask } from "../interfaces/ITask"
 
 export interface ITaskRepository {
-    getTasks(): Promise<[ITask]>
+    getTasks(): Promise<ITask[]>
     getTask(taskId: string): Promise<ITask>
 
-    getSteps(taskId: string): Promise<[IStep]>
+    getSteps(taskId: string): Promise<IStep[]>
     getStep(taskId: string, stepId: string): Promise<IStep>
 
     createTask(taskData: ICreateTaskDTO): Promise<ITask>

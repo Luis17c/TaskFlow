@@ -13,11 +13,11 @@ export interface IStep {
 // se encaixaria.
 
 export interface ITask {
-    title: string,
-    description: string,
-    steps: [IStep],
+    title: String,
+    description: String,
+    steps: IStep[],
     done: boolean,
-    users: [string],
+    users: String[],
     createdAt: string,
     updatedAt: string
 }

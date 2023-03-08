@@ -1,4 +1,4 @@
-import { IReceiveData } from "@/domain/dtos/IReceiveData";
+import { ICreateUserDTO } from "@/domain/dtos/ICreateUserDTO";
 import { IUser } from "@/domain/interfaces/IUser";
 import { IUserRepository } from "@/domain/repositories/IUserRepository";
 import { User } from "../schemas/User";
@@ -14,7 +14,7 @@ export class UserRepository implements IUserRepository {
         return await User.findById(id)
     }
 
-    async createUser({ userData }: IReceiveData): Promise<IUser> {
+    async createUser({ userData }: ICreateUserDTO): Promise<IUser> {
         const user = new User({
             name: userData.name,
             email: userData.email,

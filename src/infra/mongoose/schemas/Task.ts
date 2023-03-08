@@ -21,3 +21,4 @@ const taskSchema = new Schema<ITask>({
 })
 
 export const Task = model<ITask>('Task', taskSchema)
+export const Step = model<IStep>('Step', stepSchema)
