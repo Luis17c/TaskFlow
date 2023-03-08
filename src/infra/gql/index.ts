@@ -1,3 +1,5 @@
+import { taskResolver } from "./task/taskResolvers"
+import { taskTypeDefs } from "./task/taskTypeDefs"
 import { userResolvers } from "./user/userResolvers"
 import { userTypeDefs } from "./user/userTypeDefs"
 
@@ -6,8 +8,10 @@ import { userTypeDefs } from "./user/userTypeDefs"
 
 export const typeDefs = [
         userTypeDefs,
+        taskTypeDefs,
     ]
 
 export const resolvers = [
         userResolvers,
+        taskTypeDefs,
     ]

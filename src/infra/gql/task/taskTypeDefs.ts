@@ -47,9 +47,10 @@ export const taskTypeDefs = gql`
     type Mutation {
         createTask(taskData: TaskData): Task
         editTask(taskId: ID!, editTaskData: EditTaskData): Task
-        addUser(taskId: ID!, userId: ID!): Task
-        delUser(taskId: ID!, userId: ID!): Task
         delTask(taskId: ID!): Boolean
+
+        addTaskUser(taskId: ID!, userId: ID!): Task
+        delTaskUser(taskId: ID!, userId: ID!): Task
 
         addStep(taskId: ID!, stepData: StepData): Task
         delStep(taskId: ID!, stepId: ID!): Boolean       

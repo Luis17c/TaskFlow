@@ -56,13 +56,13 @@ export class TaskRepository implements ITaskRepository {
         const deleteResponse = await Task.deleteOne({taskId})
         return deleteResponse.acknowledged
     }
-    async addUser(taskId: string, userId: string): Promise<ITask>{
+    async addTaskUser(taskId: string, userId: string): Promise<ITask>{
         const task = await Task.findById(taskId)
         task.users.push(userId)
         await task.save()
         return task
     }
-    async delUser(taskId: string, userId: string): Promise<ITask>{
+    async delTaskUser(taskId: string, userId: string): Promise<ITask>{
         const task = await Task.findById(taskId)
         const index = task.users.indexOf(userId)
         task.users.splice(index, 1)

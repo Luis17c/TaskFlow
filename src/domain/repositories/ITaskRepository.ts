@@ -13,8 +13,8 @@ export interface ITaskRepository {
     editTask(taskId: string, editTaskData: ICreateStepDTO): Promise<ITask>
     delTask(taskId: string): Promise<Boolean>
 
-    addUser(taskId: string, userId: string): Promise<ITask>
-    delUser(taskId: string, userId: string): Promise<ITask>
+    addTaskUser(taskId: string, userId: string): Promise<ITask>
+    delTaskUser(taskId: string, userId: string): Promise<ITask>
 
     addStep(taskId: string, stepData: ICreateStepDTO): Promise<ITask>
     delStep(taskId: string, stepId: string): Promise<Boolean>
