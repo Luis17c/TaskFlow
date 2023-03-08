@@ -3,19 +3,19 @@ import { ICreateTaskDTO } from "../dtos/ICreateTaskDTO"
 import { IStep, ITask } from "../interfaces/ITask"
 
 export interface ITaskRepository {
-    getTasks(): [ITask]
-    getTask(taskId: string): ITask
+    getTasks(): Promise<[ITask]>
+    getTask(taskId: string): Promise<ITask>
 
-    getSteps(taskId: string): [IStep]
-    getStep(taskId: string, stepId: string): IStep
+    getSteps(taskId: string): Promise<[IStep]>
+    getStep(taskId: string, stepId: string): Promise<IStep>
 
-    createTask(taskData: ICreateTaskDTO): ITask
-    editTask(taskId: string, editTaskData: ICreateStepDTO): ITask
-    delTask(taskId: string): Boolean
+    createTask(taskData: ICreateTaskDTO): Promise<ITask>
+    editTask(taskId: string, editTaskData: ICreateStepDTO): Promise<ITask>
+    delTask(taskId: string): Promise<Boolean>
 
-    addUser(taskId: string, userId: string): ITask
-    delUser(taskId: string, userId: string): ITask
+    addUser(taskId: string, userId: string): Promise<ITask>
+    delUser(taskId: string, userId: string): Promise<ITask>
 
-    addStep(taskId: string, stepData: ICreateStepDTO): ITask
-    delStep(taskId: string, stepId: string): Boolean
+    addStep(taskId: string, stepData: ICreateStepDTO): Promise<ITask>
+    delStep(taskId: string, stepId: string): Promise<Boolean>
 }
